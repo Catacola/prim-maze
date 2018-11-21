@@ -30,9 +30,14 @@ def draw():
     #while step < len(edges):
     start_node, end_node = edges[step]
     
-    h_val = 20.0 * dists[end_node[0]][end_node[1]]/max_dist + 45.0
+    # blues
+    # h_val = 20.0 * dists[end_node[0]][end_node[1]]/max_dist + 45.0
+    
+    # green-blue-purp
     # h_val = 50.0 * dists[end_node[0]][end_node[1]]/max_dist + 25.0
-    # h_val = 100.0 * dists[end_node[0]][end_node[1]]/max_dist
+    
+    # rainbow
+    h_val = 100.0 * dists[end_node[0]][end_node[1]]/max_dist
 
     if step == 0:
         background(180)
