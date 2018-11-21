@@ -66,7 +66,7 @@ def generate_maze(maze_size):
     # edges = [[c * r for c in range(n_cols)]
     #          for r in range(2 * n_rows)]
 
-    edges = [[int(random(1, 50)) for c in range(n_cols)]
+    edges = [[int(random(1, 5000)) for c in range(n_cols)]
              for r in range(2 * n_rows)]
     
     dists = [[-1 for c in range(n_cols)]
