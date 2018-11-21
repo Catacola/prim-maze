@@ -15,7 +15,7 @@ def setup():
     size(1024, 768)
     noStroke()
     loop()
-    frameRate(200)
+    frameRate(2000)
 
     global edges, dists, max_dist
     edges, dists = generate_maze(n_rows * n_cols)
@@ -27,29 +27,29 @@ def draw():
     global step
     global edges
     
-    while step < len(edges):
-        start_node, end_node = edges[step]
-        
-        h_val = 20.0 * dists[end_node[0]][end_node[1]]/max_dist + 45.0
-        # h_val = 50.0 * dists[end_node[0]][end_node[1]]/max_dist + 25.0
-        # h_val = 100.0 * dists[end_node[0]][end_node[1]]/max_dist
+    #while step < len(edges):
+    start_node, end_node = edges[step]
     
-        if step == 0:
-            background(180)
-            draw_empty_maze()
-            draw_node(start_node, h_val)
-    
-        # generate_maze(step)
-    
-        draw_node(end_node, h_val)
-        draw_edge(start_node, end_node, h_val)
-    
-        step += 1
-        time.sleep(0.005)
-    
-        # draw_steps(steps)
-        if step >= len(edges):
-            noLoop()
+    h_val = 20.0 * dists[end_node[0]][end_node[1]]/max_dist + 45.0
+    # h_val = 50.0 * dists[end_node[0]][end_node[1]]/max_dist + 25.0
+    # h_val = 100.0 * dists[end_node[0]][end_node[1]]/max_dist
+
+    if step == 0:
+        background(180)
+        draw_empty_maze()
+        draw_node(start_node, h_val)
+
+    # generate_maze(step)
+
+    draw_node(end_node, h_val)
+    draw_edge(start_node, end_node, h_val)
+
+    step += 1
+    #time.sleep(0.005)
+
+    # draw_steps(steps)
+    if step >= len(edges):
+        noLoop()
 
 
 def draw_empty_maze():
